@@ -1,0 +1,12 @@
+name = "photon"
+description = "Hugo theme for simple photo blog."
+license = "MIT"
+licenselink = "https://github.com/kawaken/photon/blob/master/LICENSE"
+homepage = "https://github.com/kawaken/photon"
+tags = ["blog", "personal", "responsive", "minimal", "simple", "photo"]
+features = ["responsive"]
+min_version = "0.97.3"
+
+[author]
+  name = "Kentaro Kawano"
+  homepage = "https://kawaken.dev/"

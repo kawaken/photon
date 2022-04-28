@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "photon",
+  "version": "0.1.0",
+  "description": "Hugo theme for simple photo blog.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kawaken/photon.git"
+  },
+  "author": "Kentaro Kawano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kawaken/photon/issues"
+  },
+  "homepage": "https://github.com/kawaken/photon#readme",
+  "devDependencies": {
+    "prettier": "^2.6.2",
+    "prettier-plugin-go-template": "^0.0.12"
+  }
+}
