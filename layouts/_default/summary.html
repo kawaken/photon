@@ -1,0 +1,11 @@
+<article>
+  <header class="summary-header">
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p><small>published: {{ .PublishDate.Format "2006-01-02" }}</small></p>
+  </header>
+  <p>{{- .Summary -}}</p>
+  <p></p>
+  <p>
+    <small><a href="{{ .RelPermalink }}">{{ site.Param "readMoreText" | default "more" }}</a></small>
+  </p>
+</article>

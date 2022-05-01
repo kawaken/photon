@@ -1,0 +1,8 @@
+{{ define "main" }}
+  {{ $top_paginate := .Param "topPaginate" | default 10 }}
+  <section>
+    {{ range first $top_paginate .Site.RegularPages }}
+      {{ .Render "summary" }}
+    {{ end }}
+  </section>
+{{ end }}
