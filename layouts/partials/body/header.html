@@ -1,11 +1,11 @@
-<header id="header">
+<header id="page-header">
   <h1>
     <a href="/">
       {{ with .Param "logo" }}
-        <img src="{{ .Param }}" alt="{{ .Site.Title }}" class="logo" />
+        <img src="{{ . }}" alt="{{ .Site.Title }}" class="logo" />
       {{ else }}
-        {{ .Site.Title }}
-      {{ end }}
+        {{- .Site.Title -}}
+      {{ end -}}
     </a>
   </h1>
 </header>
