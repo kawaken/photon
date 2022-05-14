@@ -1,0 +1,14 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" -}}
+{{- $img := .Page.Resources.GetMatch $src -}}
+{{- $srcset := slice -}}
+{{- with $.Site.Param "photo.sizes" }}
+  {{- range $size := . -}}
+    {{- $r_img := $img.Resize (printf "%dx Lanczos" $size) -}}
+    {{- $r_src := printf "%s %dw" $r_img.RelPermalink $size -}}
+    {{- $srcset = $srcset | append $r_src -}}
+  {{- end -}}"
+{{- end -}}
+
+
+<img src="{{ $img.RelPermalink }}" alt="{{ $alt }}" srcset="{{- delimit $srcset ", " -}}" />

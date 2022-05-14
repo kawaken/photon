@@ -1,1 +1,5 @@
 node_modules/
+content/
+.hugo_build.lock
+config_sample.toml
+resources/
