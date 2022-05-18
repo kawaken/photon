@@ -1,15 +1,7 @@
-{{- $eyecatch_image := findRE "<img.*?src=([^>]*)?>" .Content 1 -}}
-{{ if $eyecatch_image }}
-  <article class="photo-frame">
-    <a class="photo" href="{{ .RelPermalink }}">
-      <header
-        class="photo-header {{ .Params.theme|default "light" }}"
-        style="{{ range $key, $value := .Params.styles -}}{{ $key }}:{{ $value }};{{- end }}"
-      >
-        <h2>{{ .Title }}</h2>
-        <p class="published">{{ .PublishDate.Format "2006-01-02" }}&nbsp;</p>
-      </header>
-      {{- range $eyecatch_image }}{{ . | safeHTML }}{{- end -}}</a
-    >
-  </article>
-{{ end }}
+<article>
+  <a href="{{ .RelPermalink }}">
+    <header>
+      <p>{{ .PublishDate.Format "2006-01-02" }}&nbsp;{{ .Title }}</p>
+    </header>
+  </a>
+</article>

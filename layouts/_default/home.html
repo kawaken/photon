@@ -1,8 +1,14 @@
 {{ define "main" }}
-  {{ $top_paginate := .Param "topPaginate" | default 10 }}
+  {{ $top_paginate := .Param "top.paginage" | default 10 }}
+  {{ $big_photos := .Param "top.big-photos" | default 3 }}
   <section>
-    {{ range first $top_paginate .Site.RegularPages }}
-      {{ .Render "summary" }}
+    {{ range first $big_photos .Site.RegularPages }}
+      {{ .Render "top-photo" }}
+    {{ end }}
+  </section>
+  <section class="thumbnails">
+    {{ range after $big_photos (first $top_paginate .Site.RegularPages) }}
+      {{ .Render "photo" }}
     {{ end }}
   </section>
 {{ end }}

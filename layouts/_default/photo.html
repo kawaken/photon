@@ -1,0 +1,6 @@
+{{- $eyecatch_photo := findRE "<img.*?src=([^>]*)?>" .Content 1 -}}
+{{ if $eyecatch_photo }}
+  <article class="thumbnail">
+    <a class="photo-small" href="{{ .RelPermalink }}"> {{- range $eyecatch_photo }}{{ . | safeHTML }}{{- end -}}</a>
+  </article>
+{{ end }}

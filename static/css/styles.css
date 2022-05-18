@@ -106,7 +106,6 @@
 
   header.photo-header {
     position: absolute;
-    font-size: min(4vw,2em);
     mix-blend-mode:hard-light;
   }
 
@@ -118,15 +117,44 @@
     color:#303030
   }
 
+  h2.caption {
+    font-size: min(4vw,1.5em);
+  }
+  
   p.published {
     font-size: min(2vw,0.5em);
   }
 
-  a.photo > img,
-  a.photo > picture {
+  .photo > img,
+  .photo > picture {
     max-width: min(100%,960px);
     display: block;
     margin: 0;
+    height: auto;
+  }
+
+  section.thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: min(100%,960px);
+  }
+
+  article.thumbnail {
+    margin: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    isolation: isolate;
+    width: 33.33%;
+  }
+
+  .photo-small > img,
+  .photo-small > picture {
+    display: block;
+    margin: 0;
+    height: auto;
   }
 
   main > nav {
@@ -144,34 +172,19 @@
   section > footer {
     margin-top: 1.5em;
   }
+
+  article > * {
+    margin-top: 1em;
+  }
   
   img,
   picture {
     max-width: min(100%,960px);
     display: block;
     margin: 1em auto;
+    height: auto;
   }
-  
-  div.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2px;
-    margin: 1em auto;
-  }
-  
-  div.gallery > img {
-    max-width: 210px;
-    margin: 0;
-  }
-  
-  pre > code {
-    padding: 1em;
-    display: block;
-    overflow-x: auto;
-    font-family: Monaco, Consolas, Courier New, Courier, monospace, sans-serif;
-  }
-  
+    
   blockquote {
     padding: 1em;
     border-left: 0.05em solid var(--border);
@@ -180,13 +193,6 @@
   hr {
     border: none;
     border-top: 1px solid var(--border);
-  }
-  
-  code {
-    margin: 0 0.1em;
-    padding: 0.05em 0.4em;
-    border-radius: 3px;
-    background-color: var(--bg-color);
   }
   
   ul {

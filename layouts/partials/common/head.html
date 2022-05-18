@@ -1,23 +1,23 @@
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="format-detection" content="email=no,telephone=no,address=no" />
-  {{ if .IsHome -}}
-    <title>{{ .Site.Title }}</title>
-  {{- else -}}
-    <title>
-      {{ with .Title | default "" }}{{ . }}&nbsp;/&nbsp;{{ end }}{{ .Site.Title }}
-    </title>
-  {{- end }}
-  {{ with ($.Param "author") -}}
-    <meta name="author" content="{{ . }}" />
-  {{- end }}
-  <!-- Resources -->
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <!-- RSS -->
-  {{ with .OutputFormats.Get "rss" -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-  {{ end -}}
-  <!-- Hugo -->
-  {{ hugo.Generator -}}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="format-detection" content="email=no,telephone=no,address=no" />
+{{ if .IsHome -}}
+  <title>{{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Param "description" }}" />
+{{- else -}}
+  <title>{{ with .Title | default "" }}{{ . }}&nbsp;/&nbsp;{{ end }}{{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Summary }}" />
+{{- end }}
+{{ with ($.Param "author") -}}
+  <meta name="author" content="{{ . }}" />
+{{- end }}
+<!-- Resources -->
+<link rel="stylesheet" href="/css/styles.css" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="icon" type="photo/png" href="/favicon.png" />
+<!-- RSS -->
+{{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+<!-- Hugo -->
+{{ hugo.Generator -}}
